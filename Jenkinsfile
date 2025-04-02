@@ -1,6 +1,8 @@
 pipeline {
     agent any
-
+    environment {
+    PATH = "C:/Users/alexa/OneDrive/Documents/B&FC Year 1/Jenkins/Jenkins_test;$PATH"
+    }
     stages {
         stage('Build') {
             steps {
