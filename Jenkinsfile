@@ -1,7 +1,7 @@
 pipeline {
     agent any
     environment {
-    PATH = "C:/Users/alexa/OneDrive/Documents/B&FC Year 1/Jenkins/Jenkins_test;$PATH"
+    python = "C:/Users/alexa/OneDrive/Documents/Python/Dowload/python.exe"
     }
     stages {
         stage('Build') {
@@ -23,7 +23,7 @@ pipeline {
         stage('Deploy') {
             steps {
                 echo 'Deploying the application...'
-                bat 'C:/Users/alexa/OneDrive/Documents/Python/Dowload/python.exe hello_world.py'
+                bat '${python} hello_world.py'
                 // Add your deployment commands here, for example using PowerShell or batch scripts.
                 //bat 'echo Deploying application'
             }
