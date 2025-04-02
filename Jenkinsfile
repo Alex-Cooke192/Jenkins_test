@@ -29,7 +29,7 @@ pipeline {
         stage('Deploy') {
             steps {
                 echo 'Deploying the application...'
-                bat 'C:\Users\alexa\OneDrive\Documents\B&FC_Year_1\Jenkins\Jenkins_test\hello_world.py'
+                bat 'C:/Users/alexa/OneDrive/Documents/Python/Dowload/python.exe hello_world.py'
                 // Add your deployment commands here, for example using PowerShell or batch scripts.
                 //bat 'echo Deploying application'
             }
