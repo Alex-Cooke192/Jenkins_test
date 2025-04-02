@@ -1,27 +1,35 @@
 pipeline {
     agent any
-    options {
-        // Timeout counter starts AFTER agent is allocated
-        timeout(time: 20, unit: 'SECONDS')
-    }
+
     stages {
         stage('Build') {
             steps {
-                echo 'building the application....'
+                echo 'Building the project...'
+                // Add your build commands here, for example using MSBuild, Maven, etc.
+                bat 'echo Building the project'
             }
         }
+
         stage('Test') {
             steps {
-                echo 'testing the application....'
-            }
-            post{
-                echo 'emailing test results to developer'
+                echo 'Running tests...'
+                // Add your test commands here, e.g., running unit tests or other test frameworks.
+                bat 'echo Running tests'
             }
         }
+
         stage('Deploy') {
             steps {
-                echo 'deploying application......'
+                echo 'Deploying the application...'
+                // Add your deployment commands here, for example using PowerShell or batch scripts.
+                bat 'echo Deploying application'
             }
+        }
+    }
+
+    post {
+        always {
+            echo 'This will run after all stages, no matter what.'
         }
     }
 }
