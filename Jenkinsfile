@@ -5,9 +5,22 @@ pipeline {
         timeout(time: 1, unit: 'SECONDS')
     }
     stages {
-        stage('Example') {
+        stage('Build') {
             steps {
-                Get-Date
+                echo 'building the application....'
+            }
+        }
+        stage('Test') {
+            steps {
+                echo 'testing the application....'
+            }
+            post{
+                echo 'emailing test results to developer'
+            }
+        }
+        stage('Deploy') {
+            steps {
+                echo 'deploying application......'
             }
         }
     }
