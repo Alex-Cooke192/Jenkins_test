@@ -4,12 +4,6 @@ pipeline {
     PATH = "C:/Users/alexa/OneDrive/Documents/B&FC Year 1/Jenkins/Jenkins_test;$PATH"
     }
     stages {
-        stage('Checkout') {
-            steps {
-                // Checkout code from Git repository
-                git 'https://github.com/Alex-Cooke192/Jenkins_test.git'
-            }
-        }
         stage('Build') {
             steps {
                 echo 'Building the project...'
