@@ -7,6 +7,7 @@ pipeline {
         stage('Build') {
             steps {
                 echo 'Building the project...'
+                echo python 
                 // Add your build commands here, for example using MSBuild, Maven, etc.
                 //bat 'echo Building the project'
             }
