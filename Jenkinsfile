@@ -24,7 +24,7 @@ pipeline {
         stage('Deploy') {
             steps {
                 echo 'Deploying the application...'
-                bat '${python} hello_world.py'
+                bat "\"${python}\" hello_world.py"
                 // Add your deployment commands here, for example using PowerShell or batch scripts.
                 //bat 'echo Deploying application'
             }
