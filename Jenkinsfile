@@ -33,11 +33,12 @@ pipeline {
     post {
         success {
             emailext(
-                subject: 'Build Successful!'
+                subject: 'Build Successful!',
                 body: """
                     The build for branch {BRANCH_NAME} was successful!
                     Build number: {BUILD_NUMBER}
-                """
+                """,
+                to:"30250508@blackpool.ac.uk"
             )
         }
         always {
