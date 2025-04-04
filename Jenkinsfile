@@ -1,7 +1,7 @@
 pipeline {
     agent any
     environment {
-    python = "C:/Users/alexa/OneDrive/Documents/Python/Dowload/python.exe"
+    python = "C:/Users/alexa/AppData/Roaming/Microsoft/Windows/Start Menu/Programs/Python 3.13/Python 3.13 (64-bit).lnk"
     }
     stages {
         stage('Build') {
@@ -20,7 +20,6 @@ pipeline {
                 //bat 'echo Running tests'
             }
         }
-
         stage('Deploy') {
             steps {
                 echo 'Deploying the application...'
@@ -32,6 +31,15 @@ pipeline {
     }
 
     post {
+        success {
+            emailext(
+                subject: 'Build Successful!'
+                body: """
+                    The build for branch {BRANCH_NAME} was successful!
+                    Build number: {BUILD_NUMBER}
+                """
+            )
+        }
         always {
             echo 'This will run after all stages, no matter what.'
         }
