@@ -1,7 +1,7 @@
 pipeline {
     agent any
     environment {
-    python = "C:/Users/alexa/AppData/Roaming/Microsoft/Windows/Start Menu/Programs/Python_3.13/python.exe"
+    python = "C:/Users/alexa/AppData/Roaming/Microsoft/Windows/Start Menu/Programs/Python_3.13/Python/python.exe"
     }
     stages {
         stage('Build') {
