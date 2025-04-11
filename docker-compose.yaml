@@ -1,0 +1,7 @@
+services: 
+  container_1:
+    build:
+      context: . 
+      dockerfile: Dockerfile 
+    container_name: jenkins_tester
+    tty: true
