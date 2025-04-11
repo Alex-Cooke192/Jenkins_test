@@ -1,5 +1,5 @@
 # Use an official Python runtime as a parent image
-FROM python:3.9
+FROM python:3.13-alpine
 
 # Add a non-root user and set up necessary permissions
 RUN adduser --disabled-password --gecos '' first_user
