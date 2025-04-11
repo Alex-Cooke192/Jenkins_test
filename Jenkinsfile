@@ -44,6 +44,13 @@ pipeline {
         }
         always {
             echo 'This will run after all stages, no matter what.'
+            emailext(
+                subject: 'Testing email: Always sends', 
+                body: """
+                    Frog.......ribbit! 
+                    """, 
+                to: "alexander.cooke76@outlook.com" 
+            )
         }
     }
 }
