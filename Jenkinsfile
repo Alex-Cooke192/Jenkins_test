@@ -39,6 +39,7 @@ pipeline {
                     Build number: {BUILD_NUMBER}
                 """,
                 to:"30250508@blackpool.ac.uk"
+                recipientProviders:requestor()
             )
         }
         always {
